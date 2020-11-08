@@ -1,0 +1,23 @@
+@()
+
+@main("Stock Price Prediction") {
+@defining(play.core.PlayVersion.current) { version =>
+
+<section id="content">
+    <h1>Welcome to Stock Prediction</h1>
+    <form method="post" action="@routes.PricePredictionController.predictPriceJson()">
+      <div class = "inputFields">
+        OpenPrice:<input type = "text"  name = "OpenPrice" placeholder="OpenPrice..">
+        HighPrice:<input type = "text"  name = "HighPrice" placeholder="HighPrice..">
+        LowPrice:<input type = "text"  name = "LowPrice" placeholder="LowPrice..">
+        Volume:<input type = "text"  name = "Volume" placeholder="Volume..">
+      </div>
+      <br>
+      <button type="submit" class = "buttonType">JsonOutput</button>
+      <br>
+      <br>
+      <button type = "submit" class = "buttonType" formaction="@routes.PricePredictionController.predictPriceXML()">XmlOutput</button>
+    </form>
+</section>
+}
+}

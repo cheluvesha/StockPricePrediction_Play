@@ -1,0 +1,5 @@
+[0m[[0m[0mdebug[0m] [0m[0mCopy resource mappings: [0m
+[0m[[0m[0mdebug[0m] [0m[0m	(/home/cheluvesha/IdeaProjects/PricePredictionPlay/conf/routes,/home/cheluvesha/IdeaProjects/PricePredictionPlay/target/scala-2.12/classes/routes)[0m
+[0m[[0m[0mdebug[0m] [0m[0m	(/home/cheluvesha/IdeaProjects/PricePredictionPlay/conf/messages,/home/cheluvesha/IdeaProjects/PricePredictionPlay/target/scala-2.12/classes/messages)[0m
+[0m[[0m[0mdebug[0m] [0m[0m	(/home/cheluvesha/IdeaProjects/PricePredictionPlay/conf/application.conf,/home/cheluvesha/IdeaProjects/PricePredictionPlay/target/scala-2.12/classes/application.conf)[0m
+[0m[[0m[0mdebug[0m] [0m[0m	(/home/cheluvesha/IdeaProjects/PricePredictionPlay/conf/logback.xml,/home/cheluvesha/IdeaProjects/PricePredictionPlay/target/scala-2.12/classes/logback.xml)[0m
