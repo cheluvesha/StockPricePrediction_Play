@@ -23,7 +23,7 @@ object PricePredictionModel {
       "python3 ./PythonFile/StockPricePrediction.py"
     val predictedPriceRDD = sparkSessionObj.sparkContext
       .makeRDD(List(openPrice, HighPrice, lowPrice, Volume))
-      .repartition(1)
+      .coalesce(1)
       .pipe(externalApp)
     val predictedClosePrice = predictedPriceRDD.collect().apply(0)
 

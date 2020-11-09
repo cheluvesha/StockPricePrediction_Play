@@ -21,17 +21,19 @@ return responses in XML or JSON.
 class PricePredictionController @Inject() (
     controllerComponents: ControllerComponents
 ) extends AbstractController(controllerComponents) {
-
   /*
   This function redirects to index page i.e. homePage
    */
-
   def homePage(): Action[AnyContent] = {
     Action { implicit request =>
       Ok(views.html.index())
     }
   }
 
+  /***
+    * This function accepts request and calls respective methods to response the json output
+    * @return Json value
+    */
   def predictPriceJson: Action[AnyContent] = {
     Action { implicit request =>
       val dataFromRequest = splitTheRequestToPredict(request)
@@ -40,6 +42,10 @@ class PricePredictionController @Inject() (
     }
   }
 
+  /***
+    * This function accepts request and calls respective methods to response the XML output
+    * @return text/XML
+    */
   def predictPriceXML: Action[AnyContent] = {
     Action { implicit request =>
       val dataFromRequest = splitTheRequestToPredict(request)

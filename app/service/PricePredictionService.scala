@@ -4,8 +4,16 @@ import play.api.libs.json.{JsValue, Json}
 import play.api.mvc.Results.Redirect
 import play.api.mvc.{AnyContent, Request}
 import controllers.routes
+import org.apache.spark.sql.SparkSession
 object PricePredictionService {
 
+  val sparkSession: SparkSession = Utility.UtilityClass.createSparkSession()
+
+  /***
+    * This function converts Tuple collection to Json Format
+    * @param tupleMessageAndValue (String, Double)
+    * @return JSON
+    */
   def convertToJson(tupleMessageAndValue: (String, Double)): JsValue = {
     try {
       val mappedValue =
@@ -22,6 +30,11 @@ object PricePredictionService {
     }
   }
 
+  /***
+    * This function converts the Tuple collection to XML
+    * @param tupleData (String, Double)
+    * @return String
+    */
   def convertToXML(tupleData: (String, Double)): String = {
     "<xml>" +
       "<data>" +
@@ -32,6 +45,11 @@ object PricePredictionService {
       "</xml>"
   }
 
+  /***
+    * This function checks the body and extracts the Data to predict the price
+    * @param request HTML Request
+    * @return (String, Double)
+    */
   def splitTheRequestToPredict(
       request: Request[AnyContent]
   ): (String, Double) = {
@@ -44,7 +62,7 @@ object PricePredictionService {
         val highPrice = values("HighPrice").head.toDouble
         val lowPrice = values("LowPrice").head.toDouble
         val volume = values("Volume").head.toDouble
-        val sparkSession = Utility.UtilityClass.createSparkSession()
+
         closePrice = model.PricePredictionModel.predictPrice(
           openPrice,
           highPrice,

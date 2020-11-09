@@ -1,3 +1,7 @@
+/***
+  * Dependencies used Spark core, Spark Sql and Spark MLLib
+  */
+
 lazy val root = (project in file("."))
   .enablePlugins(PlayScala)
   .settings(
