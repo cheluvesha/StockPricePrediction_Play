@@ -53,7 +53,7 @@ object PricePredictionService {
   def splitTheRequestToPredict(
       request: Request[AnyContent]
   ): (String, Double) = {
-    var closePrice: Double = 0.0
+    var closePrice: Double = 0.0 // close price initialized to zero
     val message = "The predicted result is"
     val bodyValues = request.body.asFormUrlEncoded
     bodyValues
