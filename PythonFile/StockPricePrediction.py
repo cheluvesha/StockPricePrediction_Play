@@ -19,6 +19,7 @@ try:
     # Returning the output through standard output
     sys.stdout.write(str(predictedClosePrice[0]))
 
+
 except FileNotFoundError:
     sys.stdout.write(str(-sys.maxsize))
     print("The pickle file doesnot exist")
