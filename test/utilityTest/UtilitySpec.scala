@@ -5,6 +5,7 @@ import org.apache.spark.sql.SparkSession
 import org.scalatestplus.play.PlaySpec
 
 class UtilitySpec extends PlaySpec {
+
   "Create and check object type equals or not" should {
     "SparkSession type must be matched" in {
       val sparkSession = UtilityClass.createSparkSession()
