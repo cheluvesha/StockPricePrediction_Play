@@ -5,7 +5,7 @@
 
 # An example controller showing a sample home page
 
-GET                 /                                controllers.PricePredictionController.homePage
+GET                 /                                controllers.HomeController.index
 + nocsrf
 POST                /predict/json                    controllers.PricePredictionController.predictPriceJson
 + nocsrf
