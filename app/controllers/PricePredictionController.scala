@@ -21,14 +21,6 @@ return responses in XML or JSON.
 class PricePredictionController @Inject() (
     controllerComponents: ControllerComponents
 ) extends AbstractController(controllerComponents) {
-  /*
-  This function redirects to index page i.e. homePage
-   */
-  def homePage(): Action[AnyContent] = {
-    Action { implicit request =>
-      Ok(views.html.index())
-    }
-  }
 
   /***
     * This function accepts request and calls respective methods to response the json output
