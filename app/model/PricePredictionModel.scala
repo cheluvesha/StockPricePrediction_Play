@@ -53,7 +53,7 @@ object PricePredictionModel {
         throw new FileNotFoundException()
       }
     } catch {
-      case fileNotFound: FileNotFoundException =>
+      case fileNotFoundException: FileNotFoundException =>
         throw new FileNotFoundException("python script is not available")
     }
   }
